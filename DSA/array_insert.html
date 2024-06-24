@@ -6,21 +6,53 @@
     <title>Document</title>
 
     <script>
-      let data = [4, 3, 17, 87, 96];
-      let newEl = 70;
-      let position = 2;
+      //   let data = [4, 3, 17, 87, 96];
+      //   let newEl = 70;
+      //   let position = 2;
+      //   for (let i = data.length - 1; i >= 0; i--) {
+      //     console.log(data[i]);
+      //     if (i >= position) {
+      //       data[i + 1] = data[i];
+      //       if (i == position) {
+      //         data[i] = newEl;
+      //       }
+      //     }
+      //   }
+      //   console.log(data);
 
-      for (let i = data.length - 1; i >= 0; i--) {
-        console.log(data[i]);
-        if (i >= position) {
-          data[i + 1] = data[i];
-          if (i == position) {
-            data[i] = newEl;
+      function getElement() {
+        let data = [4, 3, 17, 87, 96];
+        const elPosition = document.getElementById("position").value;
+        console.log(typeof elPosition);
+
+        const elNumber = parseInt(document.getElementById("newel").value);
+        console.log(elNumber);
+
+        if (
+          typeof elNumber !== "NaN" ||
+          elPosition < 0 ||
+          typeof parseInt(elPosition) !== "number" ||
+          elPosition >= data.length
+        ) {
+          console.log("invalid number");
+        } else {
+          for (let i = data.length - 1; i >= 0; i--) {
+            // console.log(data[i]);
+            if (i >= elPosition) {
+              data[i + 1] = data[i];
+              if (i == elPosition) {
+                data[i] = elNumber;
+              }
+            }
           }
+          console.log(data);
         }
       }
-      console.log(data);
     </script>
   </head>
-  <body></body>
+  <body>
+    Position : <input type="text" id="position" /> Number :
+    <input type="text" id="newel" />
+    <button onclick="getElement()">Get Element</button>
+  </body>
 </html>
