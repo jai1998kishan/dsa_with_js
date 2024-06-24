@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body id="bg-color">
+    <!-- <p id="demo"></p> -->
+    <h1 id="myh1">changing background color with time interval question 1</h1>
+    <button id="stop">stop</button>
+    <button id="start">start</button>
+
+    <script>
+      //setInterval()
+      const getBody = document.querySelector("#bg-color");
+      //   getBody.style.backgroundColor = "red";
+      let interval;
+      const stopChangingColor = document
+        .querySelector("#start")
+        .addEventListener("click", function () {
+          if (!interval) {
+            interval = setInterval(function () {
+              const rColor = Math.floor(Math.random() * 100);
+              const gColor = Math.floor(Math.random() * 100);
+              const bColor = Math.floor(Math.random() * 100);
+              getBody.style.backgroundColor = `rgb(${rColor}, ${gColor}, ${bColor})`;
+              console.log("1st color");
+            }, 1000);
+          }
+        });
+
+      document.querySelector("#stop").addEventListener("click", function () {
+        clearInterval(interval);
+        console.log("Stoped interval");
+        interval = null;
+      });
+    </script>
+  </body>
+</html>

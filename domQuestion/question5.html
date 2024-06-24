@@ -1,0 +1,54 @@
+<!-- adding the value of form in the table -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="">
+      First name : <input type="text" name="fname" id="fname" /> <br />
+      Last name : <input type="text" name="lname" id="lname" />
+    </form>
+
+    <table id="myTable" border="1">
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>moto</td>
+          <td>bhai</td>
+        </tr>
+        <tr>
+          <td>rocky</td>
+          <td>ji</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <button type="button" id="addButton">Button</button>
+
+    <script>
+      const table = document.getElementById("myTable");
+      const addButton = document.getElementById("addButton");
+
+      addButton.addEventListener("click", function () {
+        const fNameInput = document.getElementById("fname").value;
+        const lNameInput = document.getElementById("lname").value;
+
+        const newRow = table.insertRow();
+        const cell1 = newRow.insertCell(0);
+        const cell2 = newRow.insertCell(1);
+
+        cell1.textContent = fNameInput;
+        cell2.textContent = lNameInput;
+      });
+    </script>
+  </body>
+</html>

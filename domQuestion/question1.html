@@ -1,0 +1,26 @@
+<!-- clicking on the button the font, font siz and color of the paragraph text will be changed -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="text">javaScript Exercises</p>
+    <div>
+      <button id="jsstyle">Style</button>
+    </div>
+
+    <script>
+      document.querySelector("#jsstyle").addEventListener("click", function () {
+        const changePar = document.querySelector("#text");
+        console.log(changePar);
+        changePar.style.color = "red";
+        changePar.style.fontSize = "25px";
+        changePar.style.fontFamily = "Comic sans MS";
+      });
+    </script>
+  </body>
+</html>
