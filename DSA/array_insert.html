@@ -6,6 +6,8 @@
     <title>Document</title>
 
     <script>
+      //--1-------------------------------------------
+
       //   let data = [4, 3, 17, 87, 96];
       //   let newEl = 70;
       //   let position = 2;
@@ -20,34 +22,43 @@
       //   }
       //   console.log(data);
 
-      function getElement() {
-        let data = [4, 3, 17, 87, 96];
-        const elPosition = document.getElementById("position").value;
-        console.log(typeof elPosition);
+      //---2-----------------------------------------------
 
-        const elNumber = parseInt(document.getElementById("newel").value);
-        console.log(elNumber);
+      //   function getElement() {
+      //     let data = [4, 3, 17, 87, 96];
+      //     const elPosition = document.getElementById("position").value;
+      //     console.log(typeof elPosition);
 
-        if (
-          typeof elNumber !== "NaN" ||
-          elPosition < 0 ||
-          typeof parseInt(elPosition) !== "number" ||
-          elPosition >= data.length
-        ) {
-          console.log("invalid number");
-        } else {
-          for (let i = data.length - 1; i >= 0; i--) {
-            // console.log(data[i]);
-            if (i >= elPosition) {
-              data[i + 1] = data[i];
-              if (i == elPosition) {
-                data[i] = elNumber;
-              }
-            }
-          }
-          console.log(data);
-        }
-      }
+      //     const elNumber = parseInt(document.getElementById("newel").value);
+      //     console.log(elNumber);
+
+      //     if (
+      //       typeof elNumber !== "NaN" ||
+      //       elPosition < 0 ||
+      //       typeof parseInt(elPosition) !== "number" ||
+      //       elPosition >= data.length
+      //     ) {
+      //       console.log("invalid number");
+      //     } else {
+      //       for (let i = data.length - 1; i >= 0; i--) {
+      //         // console.log(data[i]);
+      //         if (i >= elPosition) {
+      //           data[i + 1] = data[i];
+      //           if (i == elPosition) {
+      //             data[i] = elNumber;
+      //           }
+      //         }
+      //       }
+      //       console.log(data);
+      //     }
+      //   }
+
+      //--3---------------------------------------------
+
+      //inserting element using in build function splice() method
+      let data = [4, 3, 17, 87, 96];
+      data.splice(2, 0, 99); //2 => is position where to inser -- 0 => Number of items to be removed  --- 99 => is the new element which have to inserted
+      console.log(data);
     </script>
   </head>
   <body>
