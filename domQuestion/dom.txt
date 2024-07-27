@@ -1,0 +1,152 @@
+BOM --  BOM stands for Browser Object Model
+1) The BOM is a collection of objects provided by the browser to interact with the web page and the browser itself.
+
+window Object:
+The global object in the browser context.
+Provides methods and properties to control the browser window.
+Example: window.alert('Hello!');
+
+document Object:
+Represents the web page and provides methods to interact with the HTML content.
+Example: document.getElementById('myId').innerText = 'Hello!';
+
+navigator Object:
+Contains information about the browser and operating system.
+Example: navigator.userAgent provides information about the browser's user agent string.
+
+location Object:
+Provides information about the current URL and allows navigation to other URLs.
+Example: window.location.href = 'https://www.example.com';
+
+screen Object:
+Provides information about the user's screen dimensions and properties.
+Example: screen.width gives the width of the user's screen.
+
+history Object:
+Allows manipulation of the browser session history.
+Example: window.history.back(); navigates to the previous page in history.
+
+
+
+DOM -- 
+Dom manipulation referece to the process of changing structure content or style of the html document throw DOM 
+
+DOM -- 
+it is the programing interface that Represents html document as a tree like structure (tree like object) allowing developer to interact and modu the structure and style of page
+
+we can can all the html element in the page 
+we can change all the css style 
+we can the all the attribute in the page 
+we can react over ever reacting
+we can create your oun event using event emeter class
+we can create update and delete
+
+
+
+The DOM, or Document Object Model, is a programming interface for web documents. It represents the structure of a document as a tree of objects, where each object corresponds to a part of the document, such as elements, attributes, and text. The DOM allows JavaScript (or other programming languages) to interact with and manipulate the content and structure of a web page.
+
+Here are some key concepts related to the DOM:
+
+1. DOM Structure
+Document: The root of the DOM tree, representing the entire HTML document.
+Element Nodes: Represent HTML elements (like <div>, <p>, etc.).
+Text Nodes: Contain the text content inside elements.
+Attribute Nodes: Represent the attributes of elements.
+2. Accessing and Manipulating the DOM
+Here are some common tasks you can perform using the DOM:
+
+Selecting Elements
+getElementById(): Selects an element by its ID.
+
+javascript code
+var element = document.getElementById('myId');
+getElementsByClassName(): Selects elements by their class name.
+
+javascript code
+var elements = document.getElementsByClassName('myClass');
+getElementsByTagName(): Selects elements by their tag name.
+
+javascript code
+var elements = document.getElementsByTagName('p');
+querySelector(): Selects the first element that matches a CSS selector.
+
+javascript code
+var element = document.querySelector('.myClass');
+querySelectorAll(): Selects all elements that match a CSS selector.
+
+javascript code
+var elements = document.querySelectorAll('div.myClass');
+Manipulating Elements
+Changing Content:
+
+javascript code
+document.getElementById('myId').innerText = 'New Content';
+Changing Attributes:
+
+javascript code
+document.getElementById('myId').setAttribute('class', 'newClass');
+Adding/Removing Classes:
+
+javascript code
+var element = document.getElementById('myId');
+element.classList.add('newClass');
+element.classList.remove('oldClass');
+Creating and Inserting Elements:
+
+javascript code
+var newElement = document.createElement('p');
+newElement.innerText = 'Hello, World!';
+document.body.appendChild(newElement);
+Removing Elements:
+
+javascript code
+var element = document.getElementById('myId');
+element.parentNode.removeChild(element);
+3. Handling Events
+Events are actions that occur in the browser, such as user interactions or changes in the page. You can handle events using event listeners.
+
+Adding an Event Listener:
+
+javascript code
+document.getElementById('myButton').addEventListener('click', function() {
+  alert('Button clicked!');
+});
+Removing an Event Listener:
+
+javascript code
+function handleClick() {
+  alert('Button clicked!');
+}
+document.getElementById('myButton').addEventListener('click', handleClick);
+document.getElementById('myButton').removeEventListener('click', handleClick);
+4. DOM Tree Example
+Consider the following HTML:
+
+html code
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DOM Example</title>
+</head>
+<body>
+  <div id="container">
+    <h1 class="title">Hello World</h1>
+    <p>This is a paragraph.</p>
+  </div>
+</body>
+</html>
+The DOM representation of this HTML would look like this:
+
+less code
+Document
+ └─ html
+    ├─ head
+    │  └─ title
+    │     └─ "DOM Example"
+    └─ body
+       └─ div#container
+          ├─ h1.title
+          │  └─ "Hello World"
+          └─ p
+             └─ "This is a paragraph."
+The DOM is a powerful way to interact with web pages, allowing dynamic updates and interactive features on the client side. It’s a crucial part of web development, providing a bridge between the static content of HTML and the dynamic nature of JavaScript.

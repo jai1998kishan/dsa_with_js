@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+      }
+      .main {
+        width: 100vw;
+        height: 100vh;
+        display: grid;
+        place-items: center;
+      }
+      .center {
+        height: 30%;
+        width: 60%;
+        background-color: orange;
+        display: flex;
+        flex-direction: column;
+      }
+      .first,
+      .second {
+        width: 100%;
+        height: 100%;
+      }
+      .first {
+        display: grid;
+        place-items: center;
+        font-size: 2.5rem;
+        font-weight: 800;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+      }
+      .second {
+        display: flex;
+        justify-content: space-between;
+      }
+      /* .items {
+        padding: 20px;
+      } */
+      .items h3,
+      h4 {
+        background-color: navy;
+        color: white;
+        text-align: center;
+        padding: 20px 60px;
+      }
+      .items h4 {
+        background-color: black;
+        color: white;
+        padding: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="center">
+        <div class="first">Time in New Year 2025</div>
+        <div class="second">
+          <div class="items">
+            <h3 id="days">00</h3>
+            <h4>Days</h4>
+          </div>
+          <div class="items">
+            <h3 id="days">00</h3>
+            <h4>Hours</h4>
+          </div>
+          <div class="items">
+            <h3 id="days">00</h3>
+            <h4>Minutes</h4>
+          </div>
+          <div class="items">
+            <h3 id="days">00</h3>
+            <h4>Seconds</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var center = document.querySelector(".center");
+      var second = document.querySelector(".second");
+      var targetTime = new Date(2025, 0);
+
+      setInterval(() => {
+        let currentTime = new Date();
+        var diff = targetTime - currentTime; //we get time in milesecond
+        console.log(parseInt(diff / (1000 * 60 * 60 * 24)));
+        console.log(parseInt((diff % (1000 * 60 * 60 * 24)) / (1000 * 60860)));
+        console.log(parseInt((diff % (1000 * 60 * 60 * 24)) / (1000 * 60)));
+        console.log(parseInt((diff % (1000 * 60 * 60 * 24)) / 1000));
+      }, 1000);
+    </script>
+  </body>
+</html>
